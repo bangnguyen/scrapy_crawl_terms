@@ -1,3 +1,4 @@
+import time
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.lxmlhtml import LxmlLinkExtractor as lxml
 import scrapy
@@ -44,6 +45,7 @@ class VnexpressArticle(CrawlSpider):
                 print self.cpt
                 print item['url']
                 es_client.index(index=index_name, doc_type=doctype, id=item['url'], body={"title":item["title"],"description":item["description"]})
+		time.sleep(2)
                 return item
         except:
             return None
