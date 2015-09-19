@@ -1,3 +1,4 @@
+"""
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.lxmlhtml import LxmlLinkExtractor as lxml
 import os
@@ -48,7 +49,6 @@ class ProsourceSpider(CrawlSpider):
     def closed(self, reason):
         print "close"
 
-        
 
 
-
+"""
